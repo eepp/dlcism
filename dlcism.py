@@ -29,7 +29,11 @@ def _get_feed_infos(id):
 
 def _parse_feed(id):
     url = 'http://podcast.cism893.ca/radioshow/feed_itunes/{}.xml'.format(id)
-    return feedparser.parse(url)
+    d = feedparser.parse(url)
+    if d.status == 404:
+        sys.stderr.write("Error: feed {} doesn't exist\n".format(id))
+        sys.exit(1)
+    return d
 
 
 def download_shows(base_dir, id):
