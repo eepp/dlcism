@@ -38,7 +38,8 @@ def _parse_feed(id):
 
 def download_shows(base_dir, id):
     infos = _get_feed_infos(id)
-    show_path = os.path.join(base_dir, infos['title'])
+    show_title = infos['title'].replace('/', '')
+    show_path = os.path.join(base_dir, show_title)
     if not os.path.exists(show_path):
         os.makedirs(show_path)
     for show in infos['shows']:
