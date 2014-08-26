@@ -24,7 +24,7 @@ with:
     (defaults to current working directory)
 
 Files will be saved in `<output dir>/<show title>/<Y>-<m>-<d>.mp3`, where
-`<show title>` is the show title and `Y`, `m` and `d` the year, month and day when
-the show aired.
+`<show title>` is the show title and `<Y>`, `<m>` and `<d>` are resp. the
+year, month and day the show aired.
 
 Existing files are skipped.
